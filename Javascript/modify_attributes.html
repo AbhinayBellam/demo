@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Attributes Demo</title>
+    <style>
+        .output {
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>DOM Attribute Manipulation</h2>
+
+    <img id="demoImage" src="https://via.placeholder.com/100" alt="Placeholder Image">
+
+    <br><br>
+    <button onclick="setAttr()">Set Attribute</button>
+    <button onclick="getAttr()">Get Attribute</button>
+    <button onclick="removeAttr()">Remove Attribute</button>
+
+    <div class="output" id="output"></div>
+
+    <script>
+        const img = document.getElementById('demoImage');
+        const output = document.getElementById('output');
+
+        function setAttr() {
+            img.setAttribute('alt', 'Updated Image Description');
+            img.setAttribute('width', '150');
+            output.innerText = 'Attributes set: alt, width';
+            console.log('Attributes set');
+        }
+
+        function getAttr() {
+            const altText = img.getAttribute('alt');
+            const width = img.getAttribute('width');
+            output.innerText = `Current Attributes:\\nalt = ${altText}\\nwidth = ${width}`;
+            console.log('alt:', altText, '| width:', width);
+        }
+
+        function removeAttr() {
+            img.removeAttribute('width');
+            img.removeAttribute('alt');
+            output.innerText = 'Attributes removed: alt, width';
+            console.log('Attributes removed');
+        }
+    </script>
+</body>
+</html>

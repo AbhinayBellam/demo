@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>classList Demo</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightgray;
+            margin-bottom: 10px;
+            line-height: 100px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .highlight {
+            background-color: lightgreen;
+            color: darkgreen;
+            border: 2px solid green;
+        }
+
+        .rounded {
+            border-radius: 15px;
+        }
+
+        .output {
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>classList Methods Demo</h2>
+
+<div id="box">Hello DOM</div>
+
+<button onclick="addClass()">Add Class</button>
+<button onclick="removeClass()">Remove Class</button>
+<button onclick="toggleClass()">Toggle Class</button>
+
+<div class="output" id="output"></div>
+
+<script>
+    const box = document.getElementById('box');
+    const output = document.getElementById('output');
+
+    function addClass() {
+        box.classList.add('highlight');
+        output.innerText = 'Class "highlight" added. Current classes: ' + box.className;
+        console.log('Class added:', box.className);
+    }
+
+    function removeClass() {
+        box.classList.remove('highlight');
+        output.innerText = 'Class "highlight" removed. Current classes: ' + box.className;
+        console.log('Class removed:', box.className);
+    }
+
+    function toggleClass() {
+        box.classList.toggle('rounded');
+        output.innerText = 'Class "rounded" toggled. Current classes: ' + box.className;
+        console.log('Class toggled:', box.className);
+    }
+</script>
+
+</body>
+</html>

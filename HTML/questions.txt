@@ -1,0 +1,23 @@
+HTML, CSS and Bootstrap Questions:
+
+1) How browser process HTML, CSS and Javascript?
+2) What are Browser Engine, Rendering and JavaScript Engine and How they work ?
+3) How JavaScript affects browser performance ?
+4) Why placing <script> tag at the end of the <body> tag is a good practice ?
+5) why do we use <meta> tag ?
+6) what are semantic tags ?
+7) Can we write like <html><body></body><head></head></html> ?
+8) In title area, can we display icon or image ?  If yes, can we use <image> tag to diaplay or any other tag ?
+9) what is DHTML ?
+10) what is card in HTML ?
+11) can we define variables in css ?
+
+
+
+
+> complete assignment and submit it in sharepoint.
+> have a disscusion about user story and apis with senior.
+> have a disscusion about db design with anusha
+> make ppt for demo
+> complete css topics.
+

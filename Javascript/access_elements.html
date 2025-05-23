@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Selection Demo</title>
+    <style>
+        .demo-class { color: blue; }
+        .output { font-family: monospace; white-space: pre-wrap; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hello DOM!</h1>
+    <p class="demo-class">Paragraph 1</p>
+    <p class="demo-class">Paragraph 2</p>
+    <div class="container">
+        <span>Span 1</span>
+        <span>Span 2</span>
+    </div>
+    <button onclick="showDOMSelections()">Run DOM Selection</button>
+    <div class="output" id="output"></div>
+
+    <script>
+        function showDOMSelections() {
+            let output = '';
+
+            // getElementById
+            const heading = document.getElementById('heading');
+            output += 'getElementById: ' + heading.innerText + '\\n';
+
+            // getElementsByClassName
+            const classItems = document.getElementsByClassName('demo-class');
+            output += 'getElementsByClassName: ';
+            for (let item of classItems) {
+                output += item.innerText + ' ';
+            }
+            output += '\\n';
+
+            // getElementsByTagName
+            const spanTags = document.getElementsByTagName('span');
+            output += 'getElementsByTagName: ';
+            for (let span of spanTags) {
+                output += span.innerText + ' ';
+            }
+            output += '\\n';
+
+            // querySelector
+            const firstPara = document.querySelector('.demo-class');
+            output += 'querySelector: ' + firstPara.innerText + '\\n';
+
+            // querySelectorAll
+            const allParas = document.querySelectorAll('.demo-class');
+            output += 'querySelectorAll: ';
+            allParas.forEach(p => output += p.innerText + ' ');
+            output += '\\n';
+
+            // Show on the page
+            document.getElementById('output').innerText = output;
+
+            // Also log in console
+            console.log(output);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Create, Append, Remove</title>
+    <style>
+        .output { margin-top: 20px; font-family: monospace; white-space: pre-wrap; }
+        #element-container { border: 1px solid black; padding: 10px; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Create, Append, and Delete DOM Elements</h2>
+
+    <button onclick="createElement()">Create Element</button>
+    <button onclick="deleteLastElement()">Delete Last Element</button>
+
+    <div id="element-container">
+        <!-- New elements will be added here -->
+    </div>
+
+    <div class="output" id="output"></div>
+
+    <script>
+        const container = document.getElementById('element-container');
+        const output = document.getElementById('output');
+
+        let count = 0;
+
+        function createElement() {
+            const newDiv = document.createElement('div');
+            count++;
+            newDiv.innerText = 'This is element #' + count;
+            newDiv.className = 'dynamic';
+            container.appendChild(newDiv);
+
+            output.innerText = 'Created element #' + count;
+            console.log('Created:', newDiv);
+        }
+
+        function deleteLastElement() {
+            const last = container.lastElementChild;
+            if (last) {
+                container.removeChild(last);
+                output.innerText = 'Deleted last element.';
+                console.log('Deleted:', last);
+            } else {
+                output.innerText = 'No elements to delete.';
+                console.log('No elements left.');
+            }
+        }
+    </script>
+</body>
+</html>

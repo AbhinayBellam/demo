@@ -1,0 +1,31 @@
+To create Database or use database :
+ >> use db_name;
+ >> use basic;
+Remember: In MongoDB, a database is not actually created until it gets content!
+
+To create collection in database :
+ 1) >> db.createCollection("Col_name");
+    >> db.createCollection("student");
+ 2) >> db.collectionName.insertOne({object});  object = document
+    >> db.student.insertOne({name:"abhinay", age:"22"});
+Remember: In MongoDB, a collection is not actually created until it gets content!
+
+To create documents in database:
+ 1) >> db.student.insertOne({
+       name:"abhinay",
+       age:"22",
+       gender:"male",
+       })
+ 2) >> db.student.insertMany(
+     {
+       name:"abhinay",
+       age:"22",
+       gender:"male",
+     },
+     {
+       name:"samba",
+       age:"25",
+       gender:"male",
+     }
+    )
+Note: If you try to insert documents into a collection that does not exist, MongoDB will create the collection automatically.

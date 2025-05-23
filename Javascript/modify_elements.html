@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modify DOM Elements</title>
+    <style>
+        .output { margin-top: 20px; white-space: pre-wrap; font-family: monospace; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <h2>DOM Modification Demo</h2>
+
+    <div id="content-box">
+        <p>This is <b>original</b> content.</p>
+    </div>
+
+    <button onclick="showInnerHTML()">Show innerHTML</button>
+    <button onclick="showInnerText()">Show innerText</button>
+    <button onclick="showTextContent()">Show textContent</button>
+    <br>
+
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="addContent()">Add Content</button>
+    <button onclick="clearContent()">Clear Content</button>
+
+    <div class="output" id="output"></div>
+
+    <script>
+        const box = document.getElementById('content-box');
+        const output = document.getElementById('output');
+
+        function showInnerHTML() {
+            const value = box.innerHTML;
+            output.innerText = 'innerHTML: ' + value;
+            console.log('innerHTML:', value);
+        }
+
+        function showInnerText() {
+            const value = box.innerText;
+            output.innerText = 'innerText: ' + value;
+            console.log('innerText:', value);
+        }
+
+        function showTextContent() {
+            const value = box.textContent;
+            output.innerText = 'textContent: ' + value;
+            console.log('textContent:', value);
+        }
+
+        function changeContent() {
+            box.innerHTML = '<p><i>New</i> content has <b>replaced</b> the original.</p>';
+            output.innerText = 'Content changed using innerHTML.';
+        }
+
+        function addContent() {
+            box.innerHTML += '<p>Additional content added.</p>';
+            output.innerText = 'New content added using innerHTML.';
+        }
+
+        function clearContent() {
+            box.innerHTML = '';
+            output.innerText = 'Content cleared.';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family tree</title>
+    <style>
+        body{
+            width: 100%;
+            
+            padding: 0;
+            margin: 0;
+        }
+        header {
+            /* width: 100%;
+            height: 100px; */
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1em 3em;
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo a img{
+            border-radius: 50%;
+            margin-right: 1em;
+        }
+        .logo h1 {
+            display: inline-block;
+        }
+        nav {
+            float: right;
+        }
+        nav a {
+            text-decoration: none;
+            color: wheat;
+            font-size: larger;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+        nav a:hover{
+            background-color: rgba(255, 166, 0, 0.644);
+        }
+        marquee {
+            padding: 10px;
+            background-color: wheat;
+            /* color: yellow; */
+        }
+        
+        footer {
+            padding: 1em 2em;
+            background-color: hsl(176, 25%, 36%);
+            position: relative;
+            bottom: 0;
+            text-align: center;
+        }
+        iframe{
+            width:100vw;
+            height:69vh;
+        }
+    </style>
+</head>
+<body>
+    <header style="background-color: hsl(176, 25%, 36%); ">
+        <div class="logo">
+            <a href=""><img src="family_tree.webp" alt="family-tree-logo" style=" width:100px; height: 100px;"> </a>
+            <h1 >Family Tree</h1>
+        </div>
+        <nav>
+            <a href="home.html" target="frame" >Home</a>
+        
+            <a href="contact.html" target="frame">Contact us</a>
+        
+            <a href="register.html" target="frame">Register</a>
+        </nav>
+    </header>
+
+    <marquee behavior="" direction="left"> Add your family details to build a family tree! </marquee>
+    <iframe src="home.html" name="frame" frameborder="0"></iframe>
+    
+
+    <footer>
+          All copyrights are reserved.
+    </footer>
+</body>
+</html>

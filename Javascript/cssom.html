@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSSOM Style Modification</title>
+    <style>
+        #styleTarget {
+            color: black;
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+
+        .output {
+            margin-top: 20px;
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSSOM Manipulation</h2>
+
+    <div id="styleTarget">This is the element to modify.</div>
+
+    <button onclick="showStyles()">Show Current Styles</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="addNewStyle()">Add New Style</button>
+
+    <div class="output" id="output"></div>
+
+    <script>
+        const target = document.getElementById('styleTarget');
+        const output = document.getElementById('output');
+
+        function showStyles() {
+            const styleInfo = `
+color: ${target.style.color}
+font-size: ${target.style.fontSize}
+background-color: ${target.style.backgroundColor || 'not set'}
+border: ${target.style.border}
+`;
+            output.innerText = 'Current Inline Styles:' + styleInfo;
+            console.log('Current Styles:', styleInfo);
+        }
+
+        function changeStyle() {
+            target.style.color = 'blue';
+            target.style.fontSize = '24px';
+            output.innerText = 'Styles changed: color -> blue, font-size -> 24px';
+            console.log('Styles changed');
+        }
+
+        function addNewStyle() {
+            target.style.backgroundColor = 'lightyellow';
+            target.style.boxShadow = '2px 2px 5px rgba(0,0,0,0.3)';
+            output.innerText = 'New styles added: backgroundColor, boxShadow';
+            console.log('New styles added');
+        }
+    </script>
+</body>
+</html>
